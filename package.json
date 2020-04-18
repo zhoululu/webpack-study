@@ -4,8 +4,8 @@
   "description": "* 用于个人学习之用",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server"
+    "build": "webpack --config webpack.prod.js --mode=production",
+    "dev": "webpack-dev-server --config webpack.dev.js --mode=development"
   },
   "repository": {
     "type": "git",

@@ -21,11 +21,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/html/index.html'
     })
-  ],
-  mode: 'development',
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    open: true
-  }
+  ]
 }
