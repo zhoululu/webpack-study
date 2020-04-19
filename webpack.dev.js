@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: ['./src/js/index.js', './src/html/index.html'],
   output: {
     filename: 'build.js',
     path: path.resolve(__dirname, 'dist')
@@ -13,6 +13,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader']
       }
     ]
   },
@@ -25,6 +29,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    open: true
-  }
+    open: true,
+    hot: true
+  },
+  devtool: 'eval-source-map'
 }
